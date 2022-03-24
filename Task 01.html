@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>WEB TASK 01</title>
+			<style>
+
+
+			body {
+			  font-family: sans-serif;
+			  margin: 0;
+			  padding: 0;
+			}
+
+			.container {
+			  height: 60px;
+			  background-color: #333333;
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -ms-flex-wrap: wrap;
+			  flex-wrap: wrap;
+			  -webkit-box-align: center;
+			  -ms-flex-align: center;
+			  align-items: center;
+			  overflow: hidden;
+			}
+
+			.container .logo {
+			  max-width: 250px;
+			  padding: 0 10px;
+			  overflow: hidden;
+			}
+
+			.container .logo a {
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -ms-flex-wrap: wrap;
+			  flex-wrap: wrap;
+			  -webkit-box-align: center;
+			  -ms-flex-align: center;
+			  align-items: center;
+			  height: 60px;
+			}
+
+			.container .logo a img {
+			  max-width: 100%;
+			  max-height: 60px;
+			}
+
+			.container .navbar {
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -ms-flex-wrap: wrap;
+			  flex-wrap: wrap;
+			  -webkit-box-flex: 1;
+			  -ms-flex: 1;
+			  flex: 1;
+			  padding: 0 10px;
+			}
+
+			.container .navbar ul {
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -ms-flex-wrap: wrap;
+			  flex-wrap: wrap;
+			  list-style: none;
+			  margin: 0;
+			  padding: 0;
+			}
+
+			.container .navbar ul li a {
+			  text-decoration: none;
+			  color: #999999;
+			  font-size: 14px;
+			  text-transform: uppercase;
+			  display: block;
+			  height: 60px;
+			  line-height: 60px;
+			  cursor: pointer;
+			  padding: 0 10px;
+			}
+
+			.container .navbar ul li a:hover {
+			  color: #ffffff;
+			  background-color: rgba(23, 23, 23, 0.9);
+			}
+
+			.container .navbar ul .close {
+			  display: none;
+			  text-align: right;
+			  padding: 10px;
+			}
+
+			.container .navbar ul .close span {
+			  font-size: 40px;
+			  display: inline-block;
+			  border: 1px solid #cccccc;
+			  padding: 0 10px;
+			  cursor: pointer;
+			}
+
+			.container .navbar .icon-bar {
+			  padding: 18px 8px;
+			  width: 50px;
+			  height: 60px;
+			  display: none;
+			  -webkit-box-orient: vertical;
+			  -webkit-box-direction: normal;
+			  -ms-flex-direction: column;
+			  flex-direction: column;
+			  -webkit-box-pack: justify;
+			  -ms-flex-pack: justify;
+			  justify-content: space-between;
+			  cursor: pointer;
+			}
+
+			.container .navbar .icon-bar i {
+			  background-color: #ffffff;
+			  height: 2px;
+			}
+
+			@media only screen and (max-width: 650px) {
+			  .container {
+			    -webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			    justify-content: space-between;
+			  }
+
+			  .container .logo {
+			    -webkit-box-flex: 1;
+			    -ms-flex: 1;
+			    flex: 1;
+			  }
+
+			  .container .navbar {
+			    -webkit-box-flex: 0;
+			    -ms-flex: 0;
+			    flex: 0;
+			  }
+
+			  .container .navbar ul {
+			    -ms-flex-wrap: nowrap;
+			    flex-wrap: nowrap;
+			    position: fixed;
+			    left: 100%;
+			    -webkit-box-orient: vertical;
+			    -webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			    flex-direction: column;
+			    background: #ffffff;
+			    width: 100%;
+			    height: 100%;
+			    overflow: auto;
+			    -webkit-transition: left .3s;
+			    -o-transition: left .3s;
+			    transition: left .3s;
+			  }
+
+			  .container .navbar ul li a {
+			    padding: 10px;
+			    font-size: 16px;
+			    height: auto;
+			    line-height: normal;
+			    color: #555555;
+			  }
+
+			  .container .navbar ul .close {
+			    display: block;
+			  }
+
+			  .container .navbar .icon-bar {
+			    display: -webkit-box;
+			    display: -ms-flexbox;
+			    display: flex;
+			  }
+
+			  .container .navbar ._Menus-show {
+			    left: 0;
+			  }
+			}
+
+			.body {
+			  max-width: 700px;
+			  margin: 0 auto;
+			  padding: 10px;
+			}
+
+			/* The footer is fixed to the bottom of the page */
+
+	footer{
+		position: fixed;
+		bottom: 0;
+	}
+
+	@media (max-height:800px){
+		footer { position: static; }
+		header { padding-top:40px; }
+	}
+
+
+	.footer-distributed{
+		background-color: #2c292f;
+		box-sizing: border-box;
+		width: 100%;
+		text-align: left;
+		font: bold 16px sans-serif;
+		padding: 50px 50px 60px 50px;
+		margin-top: 80px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	/* Footer left */
+
+	.footer-distributed .footer-left{
+		width: 30%;
+	}
+
+	.footer-distributed h3{
+		color:  #ffffff;
+		font: normal 36px, cursive;
+		margin: 0;
+	}
+
+	/* The company logo */
+
+	.footer-distributed .footer-left img{
+		width: 30%;
+	}
+
+	.footer-distributed h3 span{
+		color:  #e0ac1c;
+	}
+
+	/* Footer links */
+
+	.footer-distributed .footer-links{
+		color:  #ffffff;
+		margin: 20px 0 12px;
+	}
+
+	.footer-distributed .footer-links a{
+		display:inline-block;
+		line-height: 1.8;
+		text-decoration: none;
+		color:  inherit;
+	}
+
+	.footer-distributed .footer-company-name{
+		color:  #8f9296;
+		font-size: 14px;
+		font-weight: normal;
+		margin: 0;
+	}
+
+	/* Footer Center */
+
+	.footer-distributed .footer-center{
+		width: 35%;
+	}
+
+
+	.footer-distributed .footer-center i{
+		background-color:  #33383b;
+		color: #ffffff;
+		font-size: 25px;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 42px;
+		margin: 10px 15px;
+		vertical-align: middle;
+	}
+
+	.footer-distributed .footer-center i.fa-envelope{
+		font-size: 17px;
+		line-height: 38px;
+	}
+
+	.footer-distributed .footer-center p{
+		display: inline-block;
+		color: #ffffff;
+		vertical-align: middle;
+		margin:0;
+	}
+
+	.footer-distributed .footer-center p span{
+		display:block;
+		font-weight: normal;
+		font-size:14px;
+		line-height:2;
+	}
+
+	.footer-distributed .footer-center p a{
+		color:  #e0ac1c;
+		text-decoration: none;;
+	}
+
+
+	/* Footer Right */
+
+	.footer-distributed .footer-right{
+		width: 30%;
+	}
+
+	.footer-distributed .footer-company-about{
+		line-height: 20px;
+		color:  #92999f;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 0;
+	}
+
+	.footer-distributed .footer-company-about span{
+		display: block;
+		color:  #ffffff;
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+
+	.footer-distributed .footer-icons{
+		margin-top: 25px;
+	}
+
+	.footer-distributed .footer-icons a{
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		cursor: pointer;
+		background-color:  #33383b;
+		border-radius: 2px;
+
+		font-size: 20px;
+		color: #ffffff;
+		text-align: center;
+		line-height: 35px;
+
+		margin-right: 3px;
+		margin-bottom: 5px;
+	}
+
+	/* Here is the code for Responsive Footer */
+	/* You can remove below code if you don't want Footer to be responsive */
+
+
+	@media (max-width: 880px) {
+
+		.footer-distributed .footer-left,
+		.footer-distributed .footer-center,
+		.footer-distributed .footer-right{
+			display: block;
+			width: 100%;
+			margin-bottom: 40px;
+			text-align: center;
+		}
+
+		.footer-distributed .footer-center i{
+			margin-left: 0;
+		}
+
+	}
+		</style>
+		</head>
+		<body>
+
+		<div class="container">
+		    <div class="logo">
+		        <a href="#"><img src="https://www.w3jar.com/wp-content/uploads/2019/05/microsoft.png" alt="logo"></a>
+		    </div>
+		<div class="navbar">
+
+		<div class="icon-bar" onclick="Show()">
+		    <i></i>
+		    <i></i>
+		    <i></i>
+		</div>
+
+		<ul id="nav-lists">
+		    <li class="close"><span onclick="Hide()">×</span></li>
+		    <li><a href="#">Home</a></li>
+		    <li><a href="#">Blog</a></li>
+		    <li><a href="#">About</a></li>
+		    <li><a href="#">Contact</a></li>
+		</ul>
+
+		</div>
+		</div>
+		<div class="body">
+			<h1>Heading 1</h1>
+			<img style="display: inline-block; float: right;" src="img1.jpg" alt="On the Street" width="300" height="222">
+		    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem repudiandae blanditiis odit voluptate sapiente ab laborum aut dolore quam ipsam reiciendis illo, iure quia, minus eum eligendi laboriosam recusandae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem repudiandae blanditiis odit voluptate sapiente ab laborum aut dolore quam ipsam reiciendis illo, iure quia, minus eum eligendi laboriosam recusandae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem repudiandae blanditiis odit voluptate sapiente ab laborum aut dolore quam ipsam reiciendis illo, iure quia, minus eum eligendi laboriosam recusandae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem repudiandae blanditiis odit voluptate sapiente ab laborum aut dolore quam ipsam reiciendis illo, iure quia, minus eum eligendi laboriosam recusandae!</p>
+		</div>
+
+		<footer class="footer-distributed">
+
+			<div class="footer-left">
+          <img src="logo.png">
+				<h3>About<span>Microsoft</span></h3>
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					|
+					<a href="#">Blog</a>
+					|
+					<a href="#">About</a>
+					|
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">© 2022 Microsoft Learning Solutions Pvt. Ltd.</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					  <p><span>
+					  Karachi,Pakistan</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 22-27782183</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@microsoft.com">support@microsoft.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the company</span>
+					We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+				<div class="footer-icons">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-youtube"></i></a>
+				</div>
+			</div>
+		</footer>
+
+		</body>
+		</html>
